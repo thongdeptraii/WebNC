@@ -1,0 +1,30 @@
+@model QLNhaSach1.Models.User
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <!-- Đăng nhập -->
+        <div class="col-md-5">
+            <h2 class="text-center mb-4">Đăng nhập</h2>
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input name="email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu:</label>
+                    <input name="password" type="password" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+            </form>
+
+            @if (ViewData.ModelState.Count > 0)
+            {
+                <div class="alert alert-danger mt-3">
+                    @Html.ValidationSummary()
+                </div>
+            }
+
+            <div class="text-center mt-3">
+                <a asp-action="Register">Chưa có tài khoản? Đăng ký</a>
+            </div>
+        </div>
